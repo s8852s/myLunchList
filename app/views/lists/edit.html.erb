@@ -1,0 +1,20 @@
+<h1>修改午餐</h1>
+
+<%= link_to "返回列表", lists_path %>
+
+<%= form_for(@list) do |form| %>
+<%= form.label :item , "午餐項目" %>
+<%= form.text_field :item  %>
+
+<br>
+<%= form.label :calories , "熱量" %>
+<%= form.text_field :calories  %>
+
+<br>
+<%= form.label :price , "價格" %>
+<%= form.text_field :price  %>
+
+<br>
+
+<%= form.submit %>
+<% end %>

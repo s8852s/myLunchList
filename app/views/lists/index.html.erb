@@ -1,0 +1,29 @@
+<h1>午餐列表</h1>
+
+<%= flash[:notice] %>
+
+<%= link_to "新增午餐", new_list_path %>
+
+<table>
+    <thead>
+        <tr>
+            <td>午餐</td>
+            <td>熱量</td>
+            <td>價格</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @lists.each do |list| %>
+        <tr>
+            <td><%= list.item %></td>
+            <td><%= list.calories %></td>
+            <td><%= list.price %></td>
+            <td>
+                <%= link_to "修改", edit_list_path(list) %>
+                <%= link_to "刪除", list_path(list), method:"delete", data:{confirm:"確定刪除嗎?"} %>
+            </td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
